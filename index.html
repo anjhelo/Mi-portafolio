@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <!--<a href="#home"></a>-->
+    <link rel="stylesheet" href="estilos.css">
+    <!--Este link es para el icono de la pagina-->
+    <link rel="icon" href="img/logoicon.ico">
+    <!--Este script es para el validar el formulario-->
+    <script src="script.js"></script>
+    <!--Este script es para... el primero es para cuando baje el 
+        scroll aparesque el navbar blanco y controlar los ejes Y para resaltar los elementos
+        de la barra de navegacion. y el ultimo es para el responsive-->
+    <script type="text/javascript">
+        var bandera=0;
+        window.addEventListener("scroll",function(){
+            var header = document.querySelector("header");
+            var logor = document.querySelector(".letralogor");
+            var logot = document.querySelector(".letralogot");
+            var logoa = document.querySelector(".letralogoa");
+            header.classList.toggle("sticky",window.scrollY>0);
+            logor.classList.toggle("gray",window.scrollY>0);
+            logot.classList.toggle("gray",window.scrollY>0);
+            logoa.classList.toggle("gray",window.scrollY>0);
+        
+        });
+        window.addEventListener("scroll",function(){
+            if(bandera==0){
+                var about = document.querySelector(".acerca");
+                about.classList.toggle("resalter",window.scrollY>300 && window.scrollY<1200,);
+            }else{
+
+            }       
+        });
+        window.addEventListener("scroll",function(){
+            if(bandera==0){
+                var skills = document.querySelector(".habilidades");
+                skills.classList.toggle("resalter",window.scrollY>=1200 && window.scrollY<2100,);
+            }else{
+                       
+            }
+        });
+        window.addEventListener("scroll",function(){
+            if(bandera==0){
+                var aficion = document.querySelector(".aficiones");
+                aficion.classList.toggle("resalter",window.scrollY>=2100 && window.scrollY<3200,);
+            }else{
+                
+            }  
+        });
+        window.addEventListener("scroll",function(){
+            if(bandera==0){
+                var contact = document.querySelector(".contacto");
+                contact.classList.toggle("resalter",window.scrollY>=3200 && window.scrollY<=6200);
+            }else{
+                
+            }   
+        });
+        function toggleMenu(){
+            if(bandera==0){
+                bandera=1;
+            }else if(bandera==1){
+                bandera=0;
+            }
+            document.getElementById("inicio").classList.remove("resalter");
+            document.getElementById("acerca").classList.remove("resalter");
+            document.getElementById("habilidades").classList.remove("resalter");
+            document.getElementById("aficiones").classList.remove("resalter");
+            document.getElementById("contacto").classList.remove("resalter");
+            var menuToggle=document.querySelector(".toggle");
+            var menu=document.querySelector(".menu");
+            menuToggle.classList.toggle("active");
+            menu.classList.toggle("active");
+            }
+    </script>
+    
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo"><span>M</span><span >i</span> <span>P</span><span>o</span><span class="letralogor">r</span><span class="letralogot">t</span><span class="letralogoa">a</span><span>f</span><span>o</span><span>l</span><span>i</span><span>o</span></a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();" class="inicio" id="inicio">Inicio</a></li>
+            <li><a href="#about" onclick="toggleMenu();" class="acerca" id="acerca">Acerca de mi</a></li>
+            <li><a href="#services" onclick="toggleMenu();" class="habilidades" id="habilidades">Mis Habilidades</a></li>
+            <li><a href="#work" onclick="toggleMenu();" class="aficiones" id="aficiones">Aficiones</a></li>
+            <li><a href="#contact" onclick="toggleMenu();" class="contacto" id="contacto">Contacto</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Hola, Yo soy<br> <span> Anjhelo Valdez.</span></h2><br>
+            <h3 class="titulo">I.A<span class="typed"></span></h3>
+            <br>
+                <a href="#about" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Acerca de Mi
+                </a>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>Acerca de mí</h2>
+        </div>
+        <div class="content">
+            <div class="contentBx w50">
+                <h3>Mi autobiografia</h3>
+                <p class="textobiografia">Hola, me llamo Anjhelo y tengo 18 años nací en Perú me encanta el mundo de la programación y de la informática, amante de los animales tengo tres mascotas un perro llamado "Yonsi" una gata llamada "Kiara" y un conejo llamado "Bunny"(que en paz descanse) si algún día tendría la oportunidad de estudiar una segunda carrera me gustaría estudiar Medicina Veterinaria. Aprendí HTML, CSS y JavaScript por mi cuenta en las horas libres de mi trabajo la verdad es que me tomo mucho tiempo en aprender CSS y comprenderlo en su totalidad, pero con mucha practica llegue a dominarlo y ahora hago algunos proyectos, pero no como un trabajo sino como un Hobby. Talvez algún día llegue a estudiar Desarrollo Web y tomarlo como una profesión. Estudio Ingeniera de Software con Inteligencia Artificial en el instituto de SENATI elegí esta carrera porque pienso que la inteligencia artificial tiene un futuro muy importante y causará un gran impacto en el mundo ya que la mayor parte de la tecnología se está automatizando el mundo será otro si es que la inteligencia artificial llega a su más alto nivel.
+                </p><br><br><br>
+                <div class="containerrr"><a href="https://drive.google.com/u/0/uc?id=1HdK7nbwhKWlG6vgdDxv8B3d5UecQTidO&export=download">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span>Descargar CV</span>
+                    <div class="liquid"></div>
+                </a></div><br>
+            </div>
+            <div class="w50">
+                <h3>Mis Estudios</h3><br>
+                <p><span class="añodeestudio">(2008 - 2013)</p>
+                <p class="colegio"></span><span class="espacio1"></span> Primaria Completa <span class="espacio1-1"></span><img src="img/escuela.png"> <span class="institucion">I.E Trilce.</span></p><br>
+                <p class="texto"><span class="añodeestudio">(2014 - 2019)</p>
+                <p class="colegio"></span><span class="espacio2"></span> Secundaria Completa <span class="espacio2-2"></span><img src="img/escuela.png"> I.E <span class="mariscal">Mariscal Castilla.</span></p><br>
+                <p class="texto"><span class="añodeestudio">(2020 - Presente)</p>
+                <p class="colegio"></span><span class="espacio3"></span> Superior (en proceso) <span class="espacio3-3"></span><img src="img/escuela.png"><span class="senati">SENATI.</span></p><br>
+                <h3>Experiencia Laboral</h3><br>
+                <p class="añotrabajo">(2018 - 2019)</p><br>
+                <p class="subtitulo">Tecnico en Reparacion de PCs y Laptops:</p>
+                <p> Me encargaba de reparar y darte mantenimiento a los equipos informaticos </p>
+                <p> Formateos, instalacion de programas, instalacion de windows.etc.</p><br>
+                <p class="añotrabajo">(2019 - 2020)</p><br>
+                <p class="subtitulo">Tecnico en reparacion de celulares:</p>
+                <p> Me encargaba solo al cambio de pantallas de celulares y tablets.</p><br>
+                <p class="añotrabajo">(2020 - Presente)</p><br>
+                <p class="subtitulo">Encargado de un LAN CENTER.</p>
+                <p> Me encargo de establecer el tiempo que estara el cliente en la cabina.</p>
+                <p> Tambien barro el local, limpio las cabinas.etc.</p>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="heading white">
+            <h2>Mis Habilidades</h2>
+            <p>Estos son los lenguajes de programacion que domino:</p>
+        </div>
+        <div class="content">
+            <div class="servicesBx">
+                <img src="img/icon1.png">
+                <h2>Python</h2>
+                <p>Basico. Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. </p>
+            </div>
+            <div class="servicesBx">
+                <img src="img/icon2.png">
+                <h2>Java</h2>
+                <p>Intermedio. Java es un lenguaje de programación orientado a objetos.La idea de Java es que pueda realizarse programas con la posibilidad de ejecutarse en cualquier contexto, en cualquier ambiente, siendo así su portabilidad uno de sus principales logros.</p>
+            </div>
+            <div class="servicesBx">
+                <img src="img/icon3.png">
+                <h2>HTML</h2>
+                <p>Avanzado. El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar y desplegar una página web y sus contenidos. Por ejemplo, sus contenidos podrían ser párrafos, una lista con viñetas, o imágenes y tablas de datos.</p>
+            </div>
+            <div class="servicesBx">
+                <img src="img/icon4.png">
+                <h2>CSS</h2>
+                <p>Avanzado. CSS son las siglas en inglés para «hojas de estilo en cascada» (cascading style sheets). Básicamente, es un lenguaje que maneja el diseño y presentación de las páginas web, es decir, cómo lucen cuando un visitante las visita. Funciona junto al lenguaje HTML, que se encarga del contenido básico de las páginas.</p>
+            </div>
+            <div class="servicesBx">
+                <img src="img/icon5.png">
+                <h2>JavaScript</h2>
+                <p>Intermedio. JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos,​ basado en prototipos, imperativo, débilmente tipado y dinámico.</p>
+            </div>
+            <div class="servicesBx">
+                <img src="img/github.png" class="imggithub">
+                <h2>Git Hub</h2>
+                <p>Intermedio. Git es un proyecto de código abierto que se inició en 2005 y creció hasta convertirse en uno de los VCS más populares del mercado: cerca del 87% de los desarrolladores utilizan Git para sus proyectos.Se trata de un sistema de control de versiones distribuido. Esto significa que cualquier desarrollador del equipo que tenga acceso puede gestionar el código fuente y su historial de cambios utilizando las herramientas de línea de comandos de Git. </p>
+            </div>
+        </div>
+    </section>
+    <section class="work" id="work">
+        <div class="heading">
+            <h2>Aficiones</h2>
+            <p>Estas son cosas que me apasionan:</p>
+        </div>
+        <div class="content">
+            <div class="workBx">
+                <img src="img/musica.jpg" >
+                <div class="contenedortexto">
+                <h2 style="text-align: center;" class="aficion">Musica</h2>
+                </div>
+            </div>
+            <div class="workBx">
+                <img src="img/animales.jpg">
+                <div class="contenedortexto">
+                <h2 style="text-align: center;" class="aficion">Mascotas</h2>
+                </div>
+            </div>
+            <div class="workBx">
+                <img src="img/cine.jpg">
+                <div class="contenedortexto">
+                <h2 style="text-align: center;" class="aficion">Cine</h2>
+                </div>
+            </div>
+            <div class="workBx">
+                <img src="img/deporte.jpg">
+                <div class="contenedortexto">
+                <h2 style="text-align: center;" class="aficion">Deporte</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="heading white">
+            <h2>Contactame</h2>
+            <p>Si quieres que haga un proyecto para ti dejame tus datos me comunicare contigo lo mas antes posible</p>
+        </div>
+        <div class="content">
+            <div class="contactInfo">
+                <h3>Informacion de Contacto</h3>
+                <div class="contactInfoBx">
+                    <div class="box">
+                        <div class="icon">
+                            <img src="img/location.png" class="img">
+                        </div>
+                            <div class="text">
+                                <h3>Lugar</h3>
+                                <p style="cursor: pointer;" onclick="mostrardireccion()" id="direccion">
+                                    Presione Aqui</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="icon">
+                                <img src="img/phone.png">
+                            </div>
+                                <div class="text">
+                                <h3>Telefono</h3>
+                                <p style="cursor: pointer;" onclick="mostrar()" id="numero">
+                                    Presione Aqui </p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="icon">
+                                <img src="img/mail.png">
+                            </div>
+                                <div class="text">
+                                <h3>Email</h3>
+                                <p style="cursor: pointer;" onclick="mostrarcorreo()" id="correo">
+                                    Presione Aqui </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formBx">
+                    <form>
+                        <h3>Enviame un mensaje</h3>
+                        <input type="text" name="" placeholder="Nombre Completo" id="txtnombre">
+                        <input type="email" name="" placeholder="Correo Electronico" id="txtemail">
+                        <textarea placeholder="Escribe tu mensaje" id="txtmensaje"></textarea>
+                        <a class="btnenviar" style="cursor: pointer;" onclick="funcionenviar()"><span style="cursor: pointer;">Enviar</span></a>
+                        <h2 id="mensajealerta">Enviado Correctamente</h2>
+                    </form>
+                </div>
+            </div>
+    </section>
+    <a href="#inicio" id="arriba"></a><div id="button-up" onclick="irarriba()">
+        <img src="img/botonarriba.png">
+    </div></a>
+
+    <div class="copy">
+        <p>Copyright © 2021 Anjhelo Valdez. Todos los derechos Reservados.</p>
+    </div>
+    
+    <!--<script>
+        const btn=document.querySelector(".btn");
+        btn.onmousemove=function(e){
+            const x=e.pageX - btn.offsetLeft;
+            const y=e.pageY - btn.offsetTop;
+
+            btn.style.setProperty("--x", x +"px");
+            btn.style.setProperty("--y", y +"px");
+
+        }
+    </script>-->
+    
+    <!--Este script para darle un efecto al boton-->
+    <script>
+        const btnenviar=document.querySelector(".btnenviar");
+        btnenviar.onmousemove=function(e){
+            const x=e.pageX - btnenviar.offsetLeft;
+            const y=e.pageY - btnenviar.offsetTop;
+
+            btnenviar.style.setProperty("--x", x +"px");
+            btnenviar.style.setProperty("--y", y +"px");
+
+        }
+    </script>
+    <!--Este script es para el tipado automatico-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!--Este script es para los mensajes de alerta-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Este script es para editar las funciones del tipado-->
+    <script src="main.js"></script>
+</body>
+</html>
